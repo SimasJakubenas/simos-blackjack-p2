@@ -313,3 +313,23 @@ let cards = [
         image: "2diamonds.png"
     },
 ]
+
+// Selects random number between 0 and 51 for two inital cards
+let firstPlayerCard = Math.floor(Math.random() * 52);
+let secondPlayerCard = Math.floor(Math.random() * 52);
+
+// Display a sum of player card values
+let playerSum = cards[firstPlayerCard].value + cards[secondPlayerCard].value;
+document.getElementById('players-count').textContent = playerSum;
+
+//Display first card image
+let displayFirstCard = document.createElement('img');
+    displayFirstCard.src = `assets/images/cards/${cards[firstPlayerCard].image}`;
+document.getElementById('players-card-container').appendChild(displayFirstCard);
+
+//Display second card image
+let displaySecondCard = document.createElement('img');
+    displaySecondCard.src = `assets/images/cards/${cards[secondPlayerCard].image}`;
+document.getElementById('players-card-container').appendChild(displaySecondCard);
+    
+   
