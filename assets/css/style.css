@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Laila&family=Lalezar&display=swap');
+
+/* --------- Global style */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Laila', sans-serif;
+}
+
+main {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+}
+
+/* Removes default anchor background */
+a {
+    background-color: rgba(0, 0, 0, 0);
+}
