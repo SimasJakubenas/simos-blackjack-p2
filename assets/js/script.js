@@ -1,4 +1,4 @@
-/* Deck of Cards array */
+//Deck of cards object array
 let cards = [
     {
         name: "ace",
@@ -69,13 +69,13 @@ let cards = [
     {
         name: "trey",
         suit: "spades",
-        value: 11,
+        value: 3,
         image: "3spades.png"
     },
     {
         name: "deuce",
         suit: "spades",
-        value: 11,
+        value: 2,
         image: "2spades.png"
     },
     {
@@ -147,13 +147,13 @@ let cards = [
     {
         name: "trey",
         suit: "clubs",
-        value: 11,
+        value: 3,
         image: "3clubs.png"
     },
     {
         name: "deuce",
         suit: "clubs",
-        value: 11,
+        value: 2,
         image: "2clubs.png"
     },
     {
@@ -225,13 +225,13 @@ let cards = [
     {
         name: "trey",
         suit: "hearts",
-        value: 11,
+        value: 3,
         image: "3hearts.png"
     },
     {
         name: "deuce",
         suit: "hearts",
-        value: 11,
+        value: 2,
         image: "2hearts.png"
     },
     {
@@ -303,13 +303,13 @@ let cards = [
     {
         name: "trey",
         suit: "diamonds",
-        value: 11,
+        value: 3,
         image: "3diamonds.png"
     },
     {
         name: "deuce",
         suit: "diamonds",
-        value: 11,
+        value: 2,
         image: "2diamonds.png"
     },
 ]
