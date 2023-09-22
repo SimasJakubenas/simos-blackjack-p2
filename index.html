@@ -9,7 +9,8 @@
 </head>
 <body>
     <header></header>
-    <main class="grid center-content center-items">
+    <main class="grid center-items">
+        <!-- Display players name and balance -->
         <section id="display-info">
             <table>
                 <tr>
@@ -22,18 +23,22 @@
                 </tr>
             </table>
         </section>
+        <!-- Dealers side of the taable -->
         <section id="dealers-field">
             <div id="dealers-count" class="count-box">xx</div>
             <div id="dealers-card-container">xx</div>
         </section>
+        <!-- Players side of the table -->
         <section id="players-field">
             <div id="players-count" class="count-box">xx</div>
             <div id="players-card-container"></div>
         </section>
+        <!-- Display players bet on the table -->
         <section id="betting-field">
             <div id="chip-count" class="count-box"></div>
             <div id="chip-stack-container"></div>
         </section>
+        <!-- Display selection of bet sizes -->
         <section id="bet-section">
             <div id="bet-container" class="flex center-content">
                 <div id="50-chip" class="bet-chips">
@@ -53,6 +58,7 @@
                 </div>
             </div>
         </section>
+        <!-- Display buttons used to play the game -->
         <section id="game-controls">
             <button id="deal-btn" class="control-btn betting-btn">DEAL</button>
             <button id="reset-btn" class="control-btn betting-btn">RESET</button>
