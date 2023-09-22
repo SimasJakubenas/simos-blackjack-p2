@@ -93,3 +93,14 @@ a {
     border: 0.15em solid var(--black);
     box-shadow: 0.1em 0.1em 0.3em var(--black);
 }
+
+.control-btn:hover, .control-btn:focus{
+    scale: 1.05;
+    box-shadow: 0.1em 0.1em 0.5em var(--black);
+    outline: none;
+}
+
+/* Hides play buttons initially */
+.play-btn {
+    display: none;
+}
