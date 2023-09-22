@@ -25,10 +25,20 @@ body {
     font-family: 'Laila', sans-serif;
 }
 
-main {
+.grid {
     display: grid;
+}
+
+.center-content {
     justify-content: center;
+}
+
+.center-items {
     justify-items: center;
+}
+
+.flex {
+    display: flex;
 }
 
 img {
@@ -42,7 +52,7 @@ a {
 
 /* ------------Betting section style */
 
-#bet-selection {
+#bet-section {
     width: 100%;
     border-top: 0.15em solid var(--black);
     border-bottom: 0.15em solid var(--black);
@@ -51,9 +61,7 @@ a {
 
 #bet-container {
     background-color: rgba(221, 222, 198, 0.7);
-    display: flex;
     padding-top: 0.5em;
-    justify-content: center;
     height: 4em;
 }
 
