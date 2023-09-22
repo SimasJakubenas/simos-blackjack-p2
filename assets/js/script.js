@@ -327,6 +327,7 @@ let chip500 = document.getElementById('500-chip').addEventListener('click', bet5
 let chip1000 = document.getElementById('1000-chip').addEventListener('click', bet1000);
 
 let playerSum = 0;
+let betAmount = 0;
 
 /**
  * Start game by importing player cards
@@ -334,42 +335,46 @@ let playerSum = 0;
  * Hide betting buttons
  * Display play buttons
  */
-function startGame() {
-    // Selects random number between 0 and 51 for two inital cards
-    let firstPlayerCard = Math.floor(Math.random() * 52);
-    let secondPlayerCard = Math.floor(Math.random() * 52);
-    // Display a sum of player card values
-    playerSum = cards[firstPlayerCard].value + cards[secondPlayerCard].value;
-    //Create first card image
-    let displayFirstCard = document.createElement('img');
-        displayFirstCard.src = `assets/images/cards/${cards[firstPlayerCard].image}`;
-        displayFirstCard.alt = `${cards[firstPlayerCard].name}`;
-    //Create second card image
-    let displaySecondCard = document.createElement('img');
-        displaySecondCard.src = `assets/images/cards/${cards[secondPlayerCard].image}`;
-        displaySecondCard.alt = `${cards[secondPlayerCard].name}`;
-    //DIsplay deal and reset buttons and players field section on repeat game
-    document.getElementById('deal-btn').style.display ='unset';
-    document.getElementById('reset-btn').style.display ='unset';
-    document.getElementById('players-field').style.display ='unset';
-    //Import player cards
-    document.getElementById('players-card-container').appendChild(displayFirstCard);
-    document.getElementById('players-card-container').appendChild(displaySecondCard);
-    //Display sum of players cards
-    document.getElementById('players-count').textContent = playerSum;
-    //Hide betting buttons and display play buttons
-    document.getElementById('deal-btn').style.display ='none';
-    document.getElementById('reset-btn').style.display ='none';
-    document.getElementById('hit-btn').style.display ='unset';
-    document.getElementById('stand-btn').style.display ='unset';
-    //Hide chip selection
-    document.getElementById('bet-section').style.visibility ='hidden';
-    if (playerSum === 21) {
-        console.log('win!')
-        document.getElementById('hit-btn').style.display ='none';
-        document.getElementById('stand-btn').style.display ='none';
-        document.getElementById('bet-btn').style.display ='unset';
-    } 
+function startGame() { 
+    if (betAmount > 0) {
+        // Selects random number between 0 and 51 for two inital cards
+        let firstPlayerCard = Math.floor(Math.random() * 52);
+        let secondPlayerCard = Math.floor(Math.random() * 52);
+        // Display a sum of player card values
+        playerSum = cards[firstPlayerCard].value + cards[secondPlayerCard].value;
+        //Create first card image
+        let displayFirstCard = document.createElement('img');
+            displayFirstCard.src = `assets/images/cards/${cards[firstPlayerCard].image}`;
+            displayFirstCard.alt = `${cards[firstPlayerCard].name}`;
+        //Create second card image
+        let displaySecondCard = document.createElement('img');
+            displaySecondCard.src = `assets/images/cards/${cards[secondPlayerCard].image}`;
+            displaySecondCard.alt = `${cards[secondPlayerCard].name}`;
+        //DIsplay deal and reset buttons and players field section on repeat game
+        document.getElementById('deal-btn').style.display ='unset';
+        document.getElementById('reset-btn').style.display ='unset';
+        document.getElementById('players-field').style.display ='unset';
+        //Import player cards
+        document.getElementById('players-card-container').appendChild(displayFirstCard);
+        document.getElementById('players-card-container').appendChild(displaySecondCard);
+        //Display sum of players cards
+        document.getElementById('players-count').textContent = playerSum;
+        //Hide betting buttons and display play buttons
+        document.getElementById('deal-btn').style.display ='none';
+        document.getElementById('reset-btn').style.display ='none';
+        document.getElementById('hit-btn').style.display ='unset';
+        document.getElementById('stand-btn').style.display ='unset';
+        //Hide chip selection
+        document.getElementById('bet-section').style.visibility ='hidden';
+        if (playerSum === 21) {
+            console.log('win!')
+            document.getElementById('hit-btn').style.display ='none';
+            document.getElementById('stand-btn').style.display ='none';
+            document.getElementById('bet-btn').style.display ='unset';
+        }
+    } else {
+        console.log('select bet');
+    }
 }
 
 /**
@@ -423,6 +428,7 @@ function bet50() {
     bet50Chips.src = "assets/images/chips/50-slanted.png";
     bet50Chips.alt = "50$ chip has been bet";
     document.getElementById('bet-position').appendChild(bet50Chips);
+    betAmount = 50;
     document.getElementById('chip-count').textContent = '50';
 }
 
@@ -436,6 +442,7 @@ function bet100() {
     bet100Chips.src = "assets/images/chips/100-slanted.png";
     bet100Chips.alt = "100$ chip has been bet";
     document.getElementById('bet-position').appendChild(bet100Chips);
+    betAmount = 100;
     document.getElementById('chip-count').textContent = '100';
 }
 
@@ -449,6 +456,7 @@ function bet200() {
     bet200Chips.src = "assets/images/chips/200-slanted.png";
     bet200Chips.alt = "200$ chip has been bet";
     document.getElementById('bet-position').appendChild(bet200Chips);
+    betAmount = 200;
     document.getElementById('chip-count').textContent = '200';
 }
 
@@ -462,6 +470,7 @@ function bet500() {
     bet500Chips.src = "assets/images/chips/500-slanted.png";
     bet500Chips.alt = "500$ chip has been bet";
     document.getElementById('bet-position').appendChild(bet500Chips);
+    betAmount = 500;
     document.getElementById('chip-count').textContent = '500';
 }
 
@@ -475,5 +484,6 @@ function bet1000() {
     bet1000Chips.src = "assets/images/chips/1000-slanted.png";
     bet1000Chips.alt = "1000$ chip has been bet";
     document.getElementById('bet-position').appendChild(bet1000Chips);
+    betAmount = 1000;
     document.getElementById('chip-count').textContent = '1000';
 }
