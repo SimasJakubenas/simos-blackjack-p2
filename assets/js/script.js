@@ -314,22 +314,29 @@ let cards = [
     },
 ]
 
-// Selects random number between 0 and 51 for two inital cards
-let firstPlayerCard = Math.floor(Math.random() * 52);
-let secondPlayerCard = Math.floor(Math.random() * 52);
+//Control button calls function on click
+let deal = document.getElementById('deal-btn').addEventListener('click', startGame);
 
-// Display a sum of player card values
-let playerSum = cards[firstPlayerCard].value + cards[secondPlayerCard].value;
-document.getElementById('players-count').textContent = playerSum;
-
-//Display first card image
-let displayFirstCard = document.createElement('img');
-    displayFirstCard.src = `assets/images/cards/${cards[firstPlayerCard].image}`;
-document.getElementById('players-card-container').appendChild(displayFirstCard);
-
-//Display second card image
-let displaySecondCard = document.createElement('img');
-    displaySecondCard.src = `assets/images/cards/${cards[secondPlayerCard].image}`;
-document.getElementById('players-card-container').appendChild(displaySecondCard);
-    
-   
+function startGame() {
+    // Selects random number between 0 and 51 for two inital cards
+    let firstPlayerCard = Math.floor(Math.random() * 52);
+    let secondPlayerCard = Math.floor(Math.random() * 52);
+    // Display a sum of player card values
+    let playerSum = cards[firstPlayerCard].value + cards[secondPlayerCard].value;
+    document.getElementById('players-count').textContent = playerSum;
+    //Display first card image
+    let displayFirstCard = document.createElement('img');
+        displayFirstCard.src = `assets/images/cards/${cards[firstPlayerCard].image}`;
+        displayFirstCard.alt = `${cards[firstPlayerCard].name}`;
+    document.getElementById('players-card-container').appendChild(displayFirstCard);
+    //Display second card image
+    let displaySecondCard = document.createElement('img');
+        displaySecondCard.src = `assets/images/cards/${cards[secondPlayerCard].image}`;
+        displaySecondCard.alt = `${cards[secondPlayerCard].name}`;
+    document.getElementById('players-card-container').appendChild(displaySecondCard);
+    //Hide betting buttons nad display play buttons
+    document.getElementById('deal-btn').style.display ='none';
+    document.getElementById('reset-btn').style.display ='none';
+    document.getElementById('hit-btn').style.display ='unset';
+    document.getElementById('stand-btn').style.display ='unset';
+}
