@@ -423,6 +423,7 @@ function bet50() {
     bet50Chips.src = "assets/images/chips/50-slanted.png";
     bet50Chips.alt = "50$ chip has been bet";
     document.getElementById('bet-position').appendChild(bet50Chips);
+    document.getElementById('chip-count').textContent = '50';
 }
 
 /**
@@ -435,6 +436,7 @@ function bet100() {
     bet100Chips.src = "assets/images/chips/100-slanted.png";
     bet100Chips.alt = "100$ chip has been bet";
     document.getElementById('bet-position').appendChild(bet100Chips);
+    document.getElementById('chip-count').textContent = '100';
 }
 
 /**
@@ -447,6 +449,7 @@ function bet200() {
     bet200Chips.src = "assets/images/chips/200-slanted.png";
     bet200Chips.alt = "200$ chip has been bet";
     document.getElementById('bet-position').appendChild(bet200Chips);
+    document.getElementById('chip-count').textContent = '200';
 }
 
 /**
@@ -459,6 +462,7 @@ function bet500() {
     bet500Chips.src = "assets/images/chips/500-slanted.png";
     bet500Chips.alt = "500$ chip has been bet";
     document.getElementById('bet-position').appendChild(bet500Chips);
+    document.getElementById('chip-count').textContent = '500';
 }
 
 /**
@@ -471,4 +475,5 @@ function bet1000() {
     bet1000Chips.src = "assets/images/chips/1000-slanted.png";
     bet1000Chips.alt = "1000$ chip has been bet";
     document.getElementById('bet-position').appendChild(bet1000Chips);
+    document.getElementById('chip-count').textContent = '1000';
 }
