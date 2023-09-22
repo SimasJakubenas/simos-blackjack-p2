@@ -73,7 +73,7 @@ let cards = [
         image: "3spades.png"
     },
     {
-        name: "deuce",
+        name: "3ce",
         suit: "spades",
         value: 2,
         image: "2spades.png"
