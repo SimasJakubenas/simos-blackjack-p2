@@ -160,3 +160,24 @@ header i {
 .play-btn, #bet-btn {
     display: none;
 }
+
+/* ----------- Footer style */
+
+footer {
+    height: 8vh;
+    background-color: var(--black);
+    color: var(--light-grey);
+}
+
+footer i {
+    font-size: 6vh;
+    margin: 1vh;
+}
+
+footer span {
+    font-size: 0.7em;
+    display: inline-block;
+    width: 50%;
+    position: relative;
+    left: 20%;
+}
