@@ -359,7 +359,10 @@ function startGame() {
 }
 
 /**
- * 
+ * Rearange the elements so player can select new bet when hand is over
+ * Display deal nad reset buttons
+ * Hides other buttons
+ * Hides player cards and count
  */
 function selectBetSize() {
     document.getElementById('bet-section').style.visibility ='visible';
