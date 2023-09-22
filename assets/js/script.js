@@ -316,27 +316,45 @@ let cards = [
 
 //Control button calls function on click
 let deal = document.getElementById('deal-btn').addEventListener('click', startGame);
+let hit = document.getElementById('hit-btn').addEventListener('click', dealCard);
+// Selects random number between 0 and 51 for two inital cards
+let firstPlayerCard = Math.floor(Math.random() * 52);
+let secondPlayerCard = Math.floor(Math.random() * 52);
+// Display a sum of player card values
+let playerSum = cards[firstPlayerCard].value + cards[secondPlayerCard].value;
+//Create first card image
+let displayFirstCard = document.createElement('img');
+    displayFirstCard.src = `assets/images/cards/${cards[firstPlayerCard].image}`;
+    displayFirstCard.alt = `${cards[firstPlayerCard].name}`;
+//Create second card image
+let displaySecondCard = document.createElement('img');
+    displaySecondCard.src = `assets/images/cards/${cards[secondPlayerCard].image}`;
+    displaySecondCard.alt = `${cards[secondPlayerCard].name}`;
 
+/**
+ * Start game by importing player cards
+ * Display sum of players cards
+ * Hide betting buttons
+ * Display play buttons
+ */
 function startGame() {
-    // Selects random number between 0 and 51 for two inital cards
-    let firstPlayerCard = Math.floor(Math.random() * 52);
-    let secondPlayerCard = Math.floor(Math.random() * 52);
-    // Display a sum of player card values
-    let playerSum = cards[firstPlayerCard].value + cards[secondPlayerCard].value;
-    document.getElementById('players-count').textContent = playerSum;
-    //Display first card image
-    let displayFirstCard = document.createElement('img');
-        displayFirstCard.src = `assets/images/cards/${cards[firstPlayerCard].image}`;
-        displayFirstCard.alt = `${cards[firstPlayerCard].name}`;
+    //Import player cards
     document.getElementById('players-card-container').appendChild(displayFirstCard);
-    //Display second card image
-    let displaySecondCard = document.createElement('img');
-        displaySecondCard.src = `assets/images/cards/${cards[secondPlayerCard].image}`;
-        displaySecondCard.alt = `${cards[secondPlayerCard].name}`;
     document.getElementById('players-card-container').appendChild(displaySecondCard);
-    //Hide betting buttons nad display play buttons
+    //Display sum of players cards
+    document.getElementById('players-count').textContent = playerSum;
+    //Hide betting buttons and display play buttons
     document.getElementById('deal-btn').style.display ='none';
     document.getElementById('reset-btn').style.display ='none';
     document.getElementById('hit-btn').style.display ='unset';
     document.getElementById('stand-btn').style.display ='unset';
+    //Hide chip selection
+    document.getElementById('bet-section').style.visibility ='hidden';
+    if (playerSum === 21) {
+        console.log('win!')
+        document.getElementById('hit-btn').style.display ='none';
+        document.getElementById('stand-btn').style.display ='none';
+        document.getElementById('bet-btn').style.display ='unset';
+    }
 }
+
