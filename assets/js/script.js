@@ -316,7 +316,7 @@ let cards = [
 
 //Control button calls function on click
 let deal = document.getElementById('deal-btn').addEventListener('click', startGame);
-let hit = document.getElementById('hit-btn').addEventListener('click', dealCard);
+let bet = document.getElementById('bet-btn').addEventListener('click', selectBetSize);
 // Selects random number between 0 and 51 for two inital cards
 let firstPlayerCard = Math.floor(Math.random() * 52);
 let secondPlayerCard = Math.floor(Math.random() * 52);
@@ -358,3 +358,13 @@ function startGame() {
     }
 }
 
+/**
+ * 
+ */
+function selectBetSize() {
+    document.getElementById('bet-section').style.visibility ='visible';
+    document.getElementById('bet-btn').style.display ='none';
+    document.getElementById('deal-btn').style.display ='unset';
+    document.getElementById('reset-btn').style.display ='unset';
+    document.getElementById('players-field').style.display ='none';
+}
