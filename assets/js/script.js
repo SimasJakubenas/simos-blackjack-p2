@@ -321,6 +321,10 @@ let bet = document.getElementById('bet-btn').addEventListener('click', selectBet
 
 //Chip selecton calls function on click
 let chip50 = document.getElementById('50-chip').addEventListener('click', bet50);
+let chip100 = document.getElementById('100-chip').addEventListener('click', bet100);
+let chip200 = document.getElementById('200-chip').addEventListener('click', bet200);
+let chip500 = document.getElementById('500-chip').addEventListener('click', bet500);
+let chip1000 = document.getElementById('1000-chip').addEventListener('click', bet1000);
 
 let playerSum = 0;
 
@@ -419,4 +423,52 @@ function bet50() {
     bet50Chips.src = "assets/images/chips/50-slanted.png";
     bet50Chips.alt = "50$ chip has been bet";
     document.getElementById('bet-position').appendChild(bet50Chips);
+}
+
+/**
+ * Clears current bet 
+ * Bets 50$ chip
+ */
+function bet100() {
+    document.getElementById('bet-position').innerHTML = '';
+    bet100Chips = document.createElement('img');
+    bet100Chips.src = "assets/images/chips/100-slanted.png";
+    bet100Chips.alt = "100$ chip has been bet";
+    document.getElementById('bet-position').appendChild(bet100Chips);
+}
+
+/**
+ * Clears current bet 
+ * Bets 50$ chip
+ */
+function bet200() {
+    document.getElementById('bet-position').innerHTML = '';
+    bet200Chips = document.createElement('img');
+    bet200Chips.src = "assets/images/chips/200-slanted.png";
+    bet200Chips.alt = "200$ chip has been bet";
+    document.getElementById('bet-position').appendChild(bet200Chips);
+}
+
+/**
+ * Clears current bet 
+ * Bets 50$ chip
+ */
+function bet500() {
+    document.getElementById('bet-position').innerHTML = '';
+    bet500Chips = document.createElement('img');
+    bet500Chips.src = "assets/images/chips/500-slanted.png";
+    bet500Chips.alt = "500$ chip has been bet";
+    document.getElementById('bet-position').appendChild(bet500Chips);
+}
+
+/**
+ * Clears current bet 
+ * Bets 50$ chip
+ */
+function bet1000() {
+    document.getElementById('bet-position').innerHTML = '';
+    bet1000Chips = document.createElement('img');
+    bet1000Chips.src = "assets/images/chips/1000-slanted.png";
+    bet1000Chips.alt = "1000$ chip has been bet";
+    document.getElementById('bet-position').appendChild(bet1000Chips);
 }
