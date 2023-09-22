@@ -319,6 +319,9 @@ let deal = document.getElementById('deal-btn').addEventListener('click', startGa
 let hit = document.getElementById('hit-btn').addEventListener('click', drawCard);
 let bet = document.getElementById('bet-btn').addEventListener('click', selectBetSize);
 
+//Chip selecton calls function on click
+let chip50 = document.getElementById('50-chip').addEventListener('click', bet50);
+
 let playerSum = 0;
 
 /**
@@ -370,6 +373,7 @@ function startGame() {
  * Display deal nad reset buttons
  * Hides other buttons
  * Hides player cards and count
+ * Clears previous cards
  */
 function selectBetSize() {
     document.getElementById('bet-section').style.visibility ='visible';
@@ -377,6 +381,7 @@ function selectBetSize() {
     document.getElementById('deal-btn').style.display ='unset';
     document.getElementById('reset-btn').style.display ='unset';
     document.getElementById('players-field').style.display ='none';
+    document.getElementById('players-card-container').innerHTML = '';
 }
 
 /**
@@ -402,4 +407,16 @@ function drawCard() {
         document.getElementById('hit-btn').style.display ='none';
         document.getElementById('stand-btn').style.display ='none';
     }
-} 
+}
+
+/**
+ * Clears current bet 
+ * Bets 50$ chip
+ */
+function bet50() {
+    document.getElementById('bet-position').innerHTML = '';
+    bet50Chips = document.createElement('img');
+    bet50Chips.src = "assets/images/chips/50-slanted.png";
+    bet50Chips.alt = "50$ chip has been bet";
+    document.getElementById('bet-position').appendChild(bet50Chips);
+}
