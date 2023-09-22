@@ -421,6 +421,7 @@ function drawCard() {
 /**
  * Clears current bet 
  * Bets 50$ chip
+ * Change displayed bet amount
  */
 function bet50() {
     document.getElementById('bet-position').innerHTML = '';
@@ -434,7 +435,8 @@ function bet50() {
 
 /**
  * Clears current bet 
- * Bets 50$ chip
+ * Bets 100$ chip
+ * Change displayed bet amount
  */
 function bet100() {
     document.getElementById('bet-position').innerHTML = '';
@@ -448,7 +450,8 @@ function bet100() {
 
 /**
  * Clears current bet 
- * Bets 50$ chip
+ * Bets 200$ chip
+ * Change displayed bet amount
  */
 function bet200() {
     document.getElementById('bet-position').innerHTML = '';
@@ -462,7 +465,8 @@ function bet200() {
 
 /**
  * Clears current bet 
- * Bets 50$ chip
+ * Bets 500$ chip
+ * Change displayed bet amount
  */
 function bet500() {
     document.getElementById('bet-position').innerHTML = '';
@@ -476,7 +480,8 @@ function bet500() {
 
 /**
  * Clears current bet 
- * Bets 50$ chip
+ * Bets 1000$ chip
+ * Change displayed bet amount
  */
 function bet1000() {
     document.getElementById('bet-position').innerHTML = '';
